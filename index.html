@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universo 25</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="panel">
+        <div>
+          <h2>Colonia</h2>
+          <div id="hud">
+            <div class="hud-item">
+              <span class="hud-label">Población</span>
+              <span id="hud-population" class="hud-value">0</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Densidad</span>
+              <span id="hud-density" class="hud-value">0%</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Bienestar</span>
+              <span id="hud-wellbeing" class="hud-value">100%</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Fase</span>
+              <span id="hud-phase" class="hud-value">Crecimiento</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Día</span>
+              <span id="hud-tick" class="hud-value">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>Población</h2>
+          <div id="hud">
+            <div class="hud-item">
+              <span class="hud-label">Dominantes</span>
+              <span id="hud-dom" class="hud-value">0</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Subordinados</span>
+              <span id="hud-sub" class="hud-value">0</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">Hembras</span>
+              <span id="hud-fem" class="hud-value">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>Control</h2>
+          <div id="controls">
+            <div class="control-group">
+              <label>Comida</label>
+              <input type="range" id="ctrl-food" min="0" max="100" value="100" />
+            </div>
+            <div class="control-group">
+              <label>Agua</label>
+              <input type="range" id="ctrl-water" min="0" max="100" value="100" />
+            </div>
+            <div class="control-group">
+              <label>Espacio</label>
+              <input type="range" id="ctrl-space" min="0" max="100" value="100" />
+            </div>
+            <div>
+              <label id="speed-label">Velocidad</label>
+              <div id="speed-btns">
+                <button id="speed-1" class="speed-btn active">x1</button>
+                <button id="speed-2" class="speed-btn">x2</button>
+                <button id="speed-3" class="speed-btn">x3</button>
+              </div>
+            </div>
+            <div id="ctrl-actions">
+              <button id="ctrl-save">Guardar</button>
+              <button id="ctrl-custom">Personalizar</button>
+              <button id="ctrl-reset">Reiniciar</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>Leyenda</h2>
+          <div id="legend">
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#e74c3c"></span>
+              Dominante
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#3498db"></span>
+              Subordinado
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot" style="background:#2ecc71"></span>
+              Hembra
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="game-container"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
