@@ -29,8 +29,8 @@ export class Colony {
 
   constructor(config?: ColonyConfig) {
     const dom = config?.dominants ?? 2;
-    const sub = config?.subordinates ?? 3;
-    const fem = config?.females ?? 3;
+    const sub = config?.subordinates ?? 2;
+    const fem = config?.females ?? 4;
     const dist: Array<'dominant' | 'subordinate' | 'female'> = [
       ...Array(dom).fill('dominant'),
       ...Array(fem).fill('female'),

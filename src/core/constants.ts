@@ -23,9 +23,9 @@ export const RADIUS_SUBORDINATE = 4;
 export const RADIUS_FEMALE = 5;
 export const RADIUS_CHILD = 2.5;
 export const MOUSE_WANDER_FORCE = 0.4;
-export const MOUSE_SPEED = 0.8;
-export const CHASE_SPEED = 1.2;
-export const FLEE_SPEED = 1.0;
+export const MOUSE_SPEED = 5;
+export const CHASE_SPEED = 19;
+export const FLEE_SPEED = 20;
 export const CROWD_RADIUS = 35;
 
 export const DENSITY_PHASE_2_THRESHOLD = 0.18;
@@ -39,7 +39,7 @@ export const THIRST_DECAY: Record<string, number> = {
 };
 export const PREGNANT_DECAY_MULT = 1.5;
 export const SEEK_THRESHOLD = 50;
-export const SEEK_SPEED = 1.2;
+export const SEEK_SPEED = 12;
 export const EAT_TICKS = 6;
 export const DRINK_TICKS = 5;
 export const RESTORE_PER_TICK = 18;

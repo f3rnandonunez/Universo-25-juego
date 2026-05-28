@@ -26,10 +26,10 @@ Este juego transforma ese experimento en una simulacion oscura e incremental. Vo
 
 | Fase | Nombre | Que sucede |
 |------|---------|------------|
-| 1 | Crecimiento | Explosion demografica. Jerarquias estables. Alta natalidad. |
-| 2 | Estres Social | Densidad critica. Violencia, territorialidad y primeras desviaciones. |
-| 3 | Apatia | Natalidad colapsa. Aparecen "Los Hermosos". Desinteres general. |
-| 4 | Extincion | Sin retorno. La colonia se apaga lentamente. |
+| A | Establecimiento | Adaptacion al entorno. Exploracion, marcacion de territorio, primeros nidos. Sin reproduccion activa. |
+| B | Explotacion | Crecimiento exponencial. Organizacion social funcional. Hasta ~600 ratas. |
+| C | Estancamiento | Colapso social. Violencia, patologias conductuales, emergentes. Pico de ~2.200 ratas. |
+| D | Muerte | La colonia esta socialmente extinta. Solo quedan "Los Hermosos". Extincion irreversible. |
 
 ---
 
@@ -47,7 +47,7 @@ Este juego transforma ese experimento en una simulacion oscura e incremental. Vo
 | **Los Marginados** | `marginado` | Subordinados que huyen al centro permanentemente. Fantasmas sociales, semitransparentes. |
 | **Los Pansexuales** | `panurgino` | Hipersexualidad sin discriminacion ni proposito. Persiguen sin rumbo. |
 | **Los Probers** | `hiperagresivo` | Violencia compulsiva y sin logica. Dominantes que atacan a todo lo que se mueve. |
-| **Las Madres Desertoras** | `hembra_desapegada` | Hembras que abandonan toda cria. Deambulan sin proposito. |
+| **Las Madres Hiperagresivas** | `hembra_hiperagresiva` | Hembras que atacan y devoran a sus propias crias. Violencia maternal extrema. |
 | **Los Hermosos** | `hermoso` | Machos que se retiran completamente. Solo comen, duermen y se acicalan. Pelaje perfecto. Se mueven solo si es necesario. |
 
 Ninguno de estos comportamientos fue programado explicitamente. Emergen como respuesta adaptativa a un entorno que nunca existio en la naturaleza.

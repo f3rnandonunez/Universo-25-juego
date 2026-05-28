@@ -10,9 +10,9 @@ import type { ColonyConfig } from '../../simulation/Colony';
 const PHASE_NAMES = ['Establecimiento', 'Explotación', 'Estancamiento', 'Muerte'];
 
 const CONFIG_ROWS = [
-  { id: 'dom', label: 'Dominantes', def: 2, group: 'base' },
-  { id: 'sub', label: 'Subordinados', def: 3, group: 'base' },
-  { id: 'fem', label: 'Hembras', def: 3, group: 'base' },
+  { id: 'dominants', label: 'Dominantes', def: 2, group: 'base' },
+  { id: 'subordinates', label: 'Subordinados', def: 2, group: 'base' },
+  { id: 'females', label: 'Hembras', def: 4, group: 'base' },
   { id: 'marginado', label: 'Marginados', def: 0, group: 'emerged' },
   { id: 'panurgino', label: 'Panurginos', def: 0, group: 'emerged' },
   { id: 'hiperagresivo', label: 'Hiperagresivos', def: 0, group: 'emerged' },
@@ -129,7 +129,7 @@ export class GameScene extends Phaser.Scene {
         <div id="config-rows">${rowsHtml}</div>
         <div id="config-buttons">
           <button id="config-start">Iniciar</button>
-          <button id="config-default">Default (2D, 3S, 3H)</button>
+          <button id="config-default">Default (2D, 2S, 4H)</button>
         </div>
       </div>
     `;

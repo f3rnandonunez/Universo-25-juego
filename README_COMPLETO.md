@@ -21,10 +21,10 @@ Este juego transforma ese experimento en una simulacion oscura e incremental. Vo
 
 | Fase | Nombre | Que sucede |
 |------|---------|------------|
-| 1 | Crecimiento | Explosion demografica. Jerarquias estables. Alta natalidad. |
-| 2 | Estres Social | Densidad critica. Violencia, territorialidad y primeras desviaciones. |
-| 3 | Apatia | Natalidad colapsa. Aparecen "Los Hermosos". Desinteres general. |
-| 4 | Extincion | Sin retorno. La colonia se apaga lentamente. |
+| A | Establecimiento | Adaptacion al entorno. Sin reproduccion activa hasta primer parto. |
+| B | Explotacion | Crecimiento exponencial. Sociedad funcional. Hasta ~600 ratas. |
+| C | Estancamiento | Colapso social. Emergentes (marginados, panurginos, hiperagresivos, hembras hiperagresivas). Pico ~1.750. |
+| D | Muerte | Mortalidad infantil 100%. Solo "Los Hermosos". Extincion irreversible. |
 
 ### Tipos de Individuos
 
@@ -37,7 +37,7 @@ Este juego transforma ese experimento en una simulacion oscura e incremental. Vo
 | Los Marginados | `marginado` | Huyen al centro, semitransparentes | pentagono |
 | Los Pansexuales | `panurgino` | Persecucion sin rumbo | triangulo |
 | Los Probers | `hiperagresivo` | Violencia compulsiva | rombo |
-| Las Madres Desertoras | `hembra_desapegada` | Abandonan crias, deambulan | hexagono |
+| Las Madres Hiperagresivas | `hembra_hiperagresiva` | Atacan crias, violencia maternal | hexagono |
 | Los Hermosos | `hermoso` | Solo se acicalan, pelaje perfecto | elipse |
 
 ---
@@ -66,12 +66,13 @@ src/
     Mouse.ts               Entidad individual con emergedType y comportamiento por tipo
     WorldState.ts          Recursos ambientales
     Colony.ts              Poblacion colectiva, behavioralSink flag
-    SimulationEngine.ts    Tick, reproduccion (litter 6-12, 30% hermoso en F3), save/load
+    SimulationEngine.ts    Tick, reproduccion (litter 6-12, 50% hermoso en F4), save/load, reset(config)
     phases/
       Phase.ts             Interfaz PhaseRules
-      Phase1_Growth.ts     Reglas de Fase 1
-      Phase2_Stress.ts     Reglas de Fase 2 (dano cuadratico + 4 transformaciones)
-      Phase3_Apathy.ts     Reglas de Fase 3 (transformacion a hermoso)
+      Phase1_Establishment.ts  Reglas de Fase A (Establecimiento, repro 1.5 mort 0.0)
+      Phase2_Exploitation.ts   Reglas de Fase B (Explotacion, repro 1.5 mort 0.2)
+      Phase3_Stagnation.ts     Reglas de Fase C (Estancamiento, dano cuadratico + 4 transformaciones)
+      Phase4_Death.ts          Reglas de Fase D (Muerte, repro 0.0, transformacion a hermoso)
   renderer/                Capa visual (Phaser 3)
     scenes/GameScene.ts    Escena principal
     entities/MouseRenderer.ts  Dibuja formas segun tipo (circulo/pentagono/triangulo/rombo/hexagono/elipse)
@@ -99,14 +100,14 @@ La capa `simulation/` no importa ni conoce Phaser. Puede correr en Node.js o ser
 
 | Fase | Nombre | reproductionRate | mortalityRate | threshold |
 |------|--------|:-:|:-:|-----------|
-| 1 | Crecimiento | 1.5 | 0.2 | density >= 0.18 |
-| 2 | Estres Social | 0.4 | 1.8 | density >= 0.35 |
-| 3 | Apatia | 0.05 | 2.5 | terminal |
-| 4 | Extincion | — | — | no implementada |
+| A | Establecimiento | 1.5 | 0.0 | poblacion > 8 (primer parto) |
+| B | Explotacion | 1.5 | 0.2 | density >= 0.18 |
+| C | Estancamiento | 0.4 | 1.8 | density >= 0.50 |
+| D | Muerte | 0.0 | 2.5 | terminal |
 
 ## Constantes de rata noruega
 
-Madurez=90, Gestacion=22, Cooldown=1, Cuidado crias=25, Vida=730, Camada=6-12, Capacidad=3500, 8 iniciales, 9 pares de fuentes.
+Madurez=90, Gestacion=22, Cooldown=1, Cuidado crias=25, Vida=730, Camada=6-12, Capacidad=3500, 8 iniciales configurable (2D, 2S, 4H default), 9 pares de fuentes.
 
 ## Referencia historica (Calhoun)
 

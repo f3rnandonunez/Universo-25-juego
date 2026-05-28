@@ -63,7 +63,7 @@ La capa `simulation/` no importa ni conoce Phaser. Puede correr en Node.js o ser
 |------|--------|:-:|:-:|-----------|
 | 1 | Establecimiento | 1.5 | **0.0** | población > 8 (primer parto) |
 | 2 | Explotación | 1.5 | 0.2 | density >= **0.18** |
-| 3 | Estancamiento | 0.4 | 1.8 | density >= **0.63** |
+| 3 | Estancamiento | 0.4 | 1.8 | density >= **0.50** |
 | 4 | Muerte | **0.0** | 2.5 | terminal |
 
 ## Constantes de rata noruega (Calhoun)
@@ -77,7 +77,7 @@ La capa `simulation/` no importa ni conoce Phaser. Puede correr en Node.js o ser
 | Vida maxima | 730 ticks | ~2 anos wild |
 | Camada | 6-12 crias | promedio ~8 real |
 | Capacidad maxima | 3500 ratas | 6.5 m² |
-| Poblacion inicial (default) | 8 | 2 dominantes, 3 hembras, 3 subordinados (configurable) |
+| Poblacion inicial (default) | 8 | 2 dominantes, 2 subordinados, 4 hembras (configurable) |
 | Fuentes de recursos | 9 pares | 4 esquinas + centro + 4 ejes |
 
 ## Tipos emergentes (5 patologicos del experimento original)
@@ -117,7 +117,7 @@ Todos los tipos emergentes bloquean la reproduccion (`canReproduce()` retorna fa
 - behavioralSink: activo al pasar a **Fase 3 (Estancamiento)**, permanente, reduce reproduccion 70%
 - 3 sliders de control: Comida, Agua, Espacio
 - Velocidad x1/x2/x3, Guardar/**Personalizar**/Reiniciar
-- **Configuracion inicial**: overlay con 8 tipos de raton (3 base + 5 emergentes), cada uno 0-10, boton Default (2D, 3S, 3H)
+- **Configuracion inicial**: overlay con 8 tipos de raton (3 base + 5 emergentes), cada uno 0-10, boton Default (2D, 2S, 4H)
 
 ## Comandos
 
